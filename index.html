@@ -2,17 +2,332 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>a little gift</title>
+  <title>a little gift</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      background: #f7f2ea;
+      color: #2f2924;
+      font-family: Georgia, serif;
+    }
+
+    /* PASSWORD SCREEN */
+
+    #lockScreen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .lock-box {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .heart {
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    /* PASSWORD BOX */
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 18px;
+
+      border-radius: 30px;
+      border: 1px solid #8c8177;
+
+      background: transparent;
+
+      text-align: center;
+
+      font-family: Georgia, serif;
+      font-size: 16px;
+
+      outline: none;
+    }
+
+    /* ENTER BUTTON */
+
+    .enter-button {
+      margin-top: 14px;
+      padding: 12px 28px;
+
+      border: none;
+      border-radius: 30px;
+
+      background: #2f2924;
+      color: #f7f2ea;
+
+      font-family: Georgia, serif;
+      font-size: 15px;
+
+      cursor: pointer;
+    }
+
+    .enter-button:hover {
+      opacity: 0.8;
+    }
+
+    /* WRONG PASSWORD */
+
+    #error {
+      min-height: 20px;
+      margin-top: 14px;
+
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* HINT */
+
+    .hint-button {
+      margin-top: 15px;
+
+      border: none;
+      background: none;
+
+      color: #756b62;
+
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+
+      cursor: pointer;
+
+      text-decoration: underline;
+    }
+
+    #hint {
+      display: none;
+
+      margin-top: 12px;
+
+      color: #756b62;
+
+      font-size: 14px;
+      font-style: italic;
+
+      line-height: 1.6;
+    }
+
+    /* ACTUAL GIFT */
+
+    #giftPage {
+      display: none;
+
+      min-height: 100vh;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .gift-content {
+      max-width: 500px;
+    }
+
+    /* PHONE */
+
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .lock-box {
+        max-width: 330px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-    <h1>hi baby ♡</h1>
 
-    <p>you found ur lil birthday gift.</p>
+  <!-- PASSWORD SCREEN -->
+
+  <section id="lockScreen">
+
+    <div class="lock-box">
+
+      <div class="heart">
+        ♡
+      </div>
+
+      <h1>
+        hi princess yen yen
+      </h1>
+
+      <p class="subtitle">
+        this little gift is just for you.
+      </p>
+
+
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="password"
+      >
+
+
+      <button
+        class="enter-button"
+        onclick="checkPassword()"
+      >
+        enter
+      </button>
+
+
+      <p id="error"></p>
+
+
+      <!-- HINT BUTTON -->
+
+      <button
+        class="hint-button"
+        onclick="showHint()"
+      >
+        need a hint darling ?
+      </button>
+
+
+      <!-- CHANGE YOUR HINT HERE -->
+
+      <p id="hint">
+        you or me just farted hehe ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- GIFT PAGE -->
+
+  <section id="giftPage">
+
+    <div class="gift-content">
+
+      <div class="heart">
+        ♡
+      </div>
+
+      <h1>
+        you found it! good job baby
+        remember that book of mine you wanted to read oh so long ago ?
+      </h1>
+
+      <p>
+        well ... i read it for you instead ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <script>
+
+
+    /* PASSWORD */
+
+    function checkPassword() {
+
+      const password =
+        document.getElementById("passwordInput").value;
+
+
+      /* CHANGE YOUR PASSWORD HERE */
+
+      const correctPassword = "shawiw";
+
+
+      if (password === correctPassword) {
+
+        document.getElementById("lockScreen").style.display =
+          "none";
+
+        document.getElementById("giftPage").style.display =
+          "flex";
+
+      }
+
+      else {
+
+        document.getElementById("error").textContent =
+          "incorrect ❌ embarrassing babylelo";
+
+      }
+
+    }
+
+
+
+    /* HINT */
+
+    function showHint() {
+
+      document.getElementById("hint").style.display =
+        "block";
+
+    }
+
+
+
+    /* PRESSING ENTER ALSO SUBMITS PASSWORD */
+
+    document
+      .getElementById("passwordInput")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+          checkPassword();
+
+        }
+
+      });
+
+
+  </script>
+
 
 </body>
 
