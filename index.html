@@ -22,6 +22,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #111827;
@@ -29,8 +33,15 @@
       font-family: "Trebuchet MS", sans-serif;
     }
 
+    button,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-    /* ALL SCREENS */
+
+    /* =========================
+       ALL SCREENS
+       ========================= */
 
     .screen {
       min-height: 100vh;
@@ -55,7 +66,9 @@
     }
 
 
-    /* CELESTIAL STARS */
+    /* =========================
+       CELESTIAL STARS
+       ========================= */
 
     .star {
       position: absolute;
@@ -66,6 +79,8 @@
       font-size: 18px;
 
       animation: twinkle 3s infinite ease-in-out;
+
+      pointer-events: none;
     }
 
     .star.one {
@@ -105,7 +120,6 @@
       animation-delay: 0.8s;
     }
 
-
     @keyframes twinkle {
 
       0%, 100% {
@@ -121,7 +135,9 @@
     }
 
 
-    /* TEXT */
+    /* =========================
+       GENERAL TEXT
+       ========================= */
 
     .heart {
       font-size: 28px;
@@ -151,7 +167,9 @@
     }
 
 
-    /* PASSWORD */
+    /* =========================
+       PASSWORD
+       ========================= */
 
     input {
       width: 100%;
@@ -177,7 +195,9 @@
     }
 
 
-    /* BUTTONS */
+    /* =========================
+       MAIN BUTTON
+       ========================= */
 
     .main-button {
       display: block;
@@ -208,7 +228,9 @@
     }
 
 
-    /* WRONG PASSWORD */
+    /* =========================
+       WRONG PASSWORD
+       ========================= */
 
     #error {
       min-height: 22px;
@@ -222,7 +244,9 @@
     }
 
 
-    /* HINT */
+    /* =========================
+       HINT
+       ========================= */
 
     .hint-button {
       margin-top: 6px;
@@ -255,7 +279,9 @@
     }
 
 
-    /* GIFT REVEAL */
+    /* =========================
+       GIFT REVEAL
+       ========================= */
 
     #giftPage {
       display: none;
@@ -271,44 +297,276 @@
     }
 
 
-    /* AUDIOBOOK PAGE */
+    /* =========================
+       AUDIOBOOK PAGE
+       ========================= */
 
     #audiobookPage {
       display: none;
+
+      min-height: 100vh;
+
+      padding: 48px 20px 80px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .audiobook-content {
+      width: 100%;
+      max-width: 540px;
+
+      margin: 0 auto;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-header {
+      text-align: center;
+
+      margin-bottom: 55px;
     }
 
     .book-title {
-      font-size: clamp(50px, 12vw, 76px);
-      margin-bottom: 12px;
+      font-family: "Caveat", cursive;
+
+      font-size: clamp(54px, 13vw, 82px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+      margin: 0 0 12px;
     }
 
     .author {
-      font-size: 14px;
+      font-size: 13px;
 
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
 
       color: #cfc3b3;
 
-      margin-bottom: 30px;
+      margin: 0 0 25px;
     }
 
     .read-by {
       font-family: "Caveat", cursive;
 
-      font-size: 25px;
-      line-height: 1.5;
+      font-size: 26px;
 
       color: #e8ded0;
+
+      margin: 0;
     }
 
 
-    /* COMPUTER */
+    /* =========================
+       AUDIOBOOK SECTIONS
+       ========================= */
+
+    .audio-section {
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      font-family: "Caveat", cursive;
+
+      color: #f7df9c;
+
+      font-size: 29px;
+      font-weight: 500;
+
+      margin: 0 0 15px;
+
+      text-align: left;
+    }
+
+    .personal-section {
+      margin-bottom: 48px;
+    }
+
+
+    /* =========================
+       TRACK CARD
+       ========================= */
+
+    .track {
+      border: 1px solid rgba(215, 199, 173, 0.32);
+
+      background: rgba(255, 255, 255, 0.025);
+
+      border-radius: 18px;
+
+      padding: 17px;
+
+      margin-bottom: 13px;
+
+      text-align: left;
+    }
+
+    .track-main {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .play-button {
+      width: 44px;
+      height: 44px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      border: 1px solid #d7c7ad;
+
+      background: transparent;
+
+      color: #f8f1e7;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      padding: 0;
+    }
+
+    .track-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .track-title {
+      font-family: "Caveat", cursive;
+
+      font-size: 24px;
+
+      line-height: 1.1;
+
+      color: #f8f1e7;
+
+      margin: 0;
+    }
+
+    .track-length {
+      margin-top: 5px;
+
+      color: #9e958a;
+
+      font-size: 11px;
+
+      letter-spacing: 0.7px;
+    }
+
+
+    /* =========================
+       PROGRESS BAR
+       ========================= */
+
+    .progress-area {
+      margin-top: 14px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+
+      appearance: none;
+      -webkit-appearance: none;
+
+      background: rgba(215,199,173,0.2);
+
+      border: 0;
+      border-radius: 10px;
+
+      outline: none;
+
+      padding: 0;
+
+      cursor: pointer;
+    }
+
+    .progress-bar::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+
+      background: #f7df9c;
+
+      cursor: pointer;
+    }
+
+    .progress-bar::-moz-range-thumb {
+      width: 13px;
+      height: 13px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: #f7df9c;
+
+      cursor: pointer;
+    }
+
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 6px;
+
+      color: #8f877d;
+
+      font-size: 10px;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    /* =========================
+       BOTTOM NOTE
+       ========================= */
+
+    .end-note {
+      text-align: center;
+
+      font-family: "Caveat", cursive;
+
+      font-size: 22px;
+
+      color: #a99f92;
+
+      margin-top: 50px;
+    }
+
+
+    /* =========================
+       DESKTOP
+       ========================= */
 
     @media (min-width: 700px) {
 
       .content {
         max-width: 520px;
+      }
+
+      #audiobookPage {
+        padding-top: 65px;
+      }
+
+      .track {
+        padding: 19px;
       }
 
     }
@@ -321,7 +579,9 @@
 <body>
 
 
-  <!-- PASSWORD SCREEN -->
+  <!-- =========================
+       PASSWORD SCREEN
+       ========================= -->
 
   <section id="lockScreen" class="screen">
 
@@ -378,7 +638,9 @@
 
 
 
-  <!-- GIFT REVEAL -->
+  <!-- =========================
+       GIFT REVEAL
+       ========================= -->
 
   <section id="giftPage" class="screen">
 
@@ -420,9 +682,11 @@
 
 
 
-  <!-- AUDIOBOOK PAGE -->
+  <!-- =========================
+       AUDIOBOOK PAGE
+       ========================= -->
 
-  <section id="audiobookPage" class="screen">
+  <section id="audiobookPage">
 
     <span class="star one">✦</span>
     <span class="star two">✧</span>
@@ -431,28 +695,418 @@
     <span class="star five">✦</span>
     <span class="star six">✧</span>
 
-    <div class="content">
+    <div class="audiobook-content">
 
-      <div class="heart">
-        ✦
+
+      <!-- BOOK TITLE -->
+
+      <div class="book-header">
+
+        <div class="heart">
+          ✦
+        </div>
+
+        <h1 class="book-title">
+          The Alchemist
+        </h1>
+
+        <p class="author">
+          Paulo Coelho
+        </p>
+
+        <p class="read-by">
+          read to you by tricky micky ♡
+        </p>
+
       </div>
 
-      <h1 class="book-title">
-        The Alchemist
-      </h1>
 
-      <p class="author">
-        Paulo Coelho
+
+      <!-- =========================
+           SOMETHING FROM ME
+           ========================= -->
+
+      <div class="audio-section personal-section">
+
+        <h2 class="section-title">
+          a little something from me ♡
+        </h2>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio00', this)"
+              aria-label="play before you begin"
+            >
+              ▶
+            </button>
+
+
+            <div class="track-details">
+
+              <p class="track-title">
+                00 · before you begin
+              </p>
+
+              <div class="track-length">
+                3:18
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio00', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>3:18</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio00"
+            src="00-introduction.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           PROLOGUE
+           ========================= -->
+
+      <div class="audio-section">
+
+        <h2 class="section-title">
+          prologue
+        </h2>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio01', this)"
+              aria-label="play prologue"
+            >
+              ▶
+            </button>
+
+
+            <div class="track-details">
+
+              <p class="track-title">
+                01 · prologue
+              </p>
+
+              <div class="track-length">
+                1:25
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio01', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>1:25</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio01"
+            src="01-prologue.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           PART ONE
+           ========================= -->
+
+      <div class="audio-section">
+
+        <h2 class="section-title">
+          part one
+        </h2>
+
+
+        <!-- TRACK 02 -->
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio02', this)"
+            >
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                02 · part one
+              </p>
+
+              <div class="track-length">
+                15:54
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio02', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>15:54</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio02"
+            src="02-part one.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+
+
+        <!-- TRACK 03 -->
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio03', this)"
+            >
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                03 · part one
+              </p>
+
+              <div class="track-length">
+                8:49
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio03', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>8:49</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio03"
+            src="03-part one.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+
+
+        <!-- TRACK 04 -->
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio04', this)"
+            >
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                04 · part one
+              </p>
+
+              <div class="track-length">
+                9:23
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio04', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>9:23</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio04"
+            src="04-part one.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+
+
+        <!-- TRACK 05 -->
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button
+              class="play-button"
+              onclick="toggleTrack('audio05', this)"
+            >
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                05 · part one
+              </p>
+
+              <div class="track-length">
+                15:36
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio05', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>15:36</span>
+            </div>
+
+          </div>
+
+
+          <audio
+            id="audio05"
+            src="05-part one.m4a"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="end-note">
+        more of the story awaits ✦
       </p>
 
-      <p class="read-by">
-        read to you by tricky micky ♡
-      </p>
-      
-      <audio controls style="width: 100%; margin-top: 25px;">
-  <source src="test-audio.m4a" type="audio/mp4">
-  your browser does not support audio.
-</audio>
 
     </div>
 
@@ -460,7 +1114,16 @@
 
 
 
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
   <script>
+
+
+    /* =========================
+       PASSWORD
+       ========================= */
 
     function checkPassword() {
 
@@ -468,6 +1131,7 @@
         document.getElementById("passwordInput").value;
 
       const correctPassword = "shawiw";
+
 
       if (password === correctPassword) {
 
@@ -489,6 +1153,11 @@
     }
 
 
+
+    /* =========================
+       HINT
+       ========================= */
+
     function showHint() {
 
       document.getElementById("hint").style.display =
@@ -497,16 +1166,28 @@
     }
 
 
+
+    /* =========================
+       OPEN GIFT
+       ========================= */
+
     function openGift() {
 
       document.getElementById("giftPage").style.display =
         "none";
 
       document.getElementById("audiobookPage").style.display =
-        "flex";
+        "block";
+
+      window.scrollTo(0, 0);
 
     }
 
+
+
+    /* =========================
+       ENTER KEY
+       ========================= */
 
     document
       .getElementById("passwordInput")
@@ -517,6 +1198,204 @@
         }
 
       });
+
+
+
+    /* =========================
+       AUDIO PLAYER
+       ========================= */
+
+    const audioPlayers =
+      document.querySelectorAll("audio");
+
+
+    audioPlayers.forEach(audio => {
+
+      const track =
+        audio.closest(".track");
+
+      const progressBar =
+        track.querySelector(".progress-bar");
+
+      const currentTimeDisplay =
+        track.querySelector(".current-time");
+
+      const playButton =
+        track.querySelector(".play-button");
+
+
+      /* LOAD SAVED POSITION */
+
+      audio.addEventListener("loadedmetadata", function() {
+
+        const savedTime =
+          localStorage.getItem("progress-" + audio.id);
+
+        if (savedTime) {
+
+          const savedNumber =
+            parseFloat(savedTime);
+
+          if (
+            savedNumber > 0 &&
+            savedNumber < audio.duration
+          ) {
+            audio.currentTime = savedNumber;
+          }
+
+        }
+
+      });
+
+
+
+      /* UPDATE PROGRESS */
+
+      audio.addEventListener("timeupdate", function() {
+
+        if (!audio.duration) {
+          return;
+        }
+
+        const percentage =
+          (audio.currentTime / audio.duration) * 100;
+
+        progressBar.value = percentage;
+
+        currentTimeDisplay.textContent =
+          formatTime(audio.currentTime);
+
+
+        /* SAVE POSITION */
+
+        localStorage.setItem(
+          "progress-" + audio.id,
+          audio.currentTime
+        );
+
+      });
+
+
+
+      /* RESET BUTTON AT END */
+
+      audio.addEventListener("ended", function() {
+
+        playButton.textContent = "▶";
+
+        localStorage.removeItem(
+          "progress-" + audio.id
+        );
+
+      });
+
+    });
+
+
+
+    /* =========================
+       PLAY / PAUSE
+       ========================= */
+
+    function toggleTrack(audioId, button) {
+
+      const selectedAudio =
+        document.getElementById(audioId);
+
+
+      /* PAUSE EVERY OTHER TRACK */
+
+      audioPlayers.forEach(audio => {
+
+        if (audio !== selectedAudio) {
+
+          audio.pause();
+
+          const otherTrack =
+            audio.closest(".track");
+
+          const otherButton =
+            otherTrack.querySelector(".play-button");
+
+          otherButton.textContent =
+            "▶";
+
+        }
+
+      });
+
+
+
+      /* PLAY SELECTED TRACK */
+
+      if (selectedAudio.paused) {
+
+        selectedAudio.play();
+
+        button.textContent =
+          "❚❚";
+
+      }
+
+      else {
+
+        selectedAudio.pause();
+
+        button.textContent =
+          "▶";
+
+      }
+
+    }
+
+
+
+    /* =========================
+       SEEK
+       ========================= */
+
+    function seekTrack(audioId, percentage) {
+
+      const audio =
+        document.getElementById(audioId);
+
+      if (!audio.duration) {
+        return;
+      }
+
+      audio.currentTime =
+        (percentage / 100) * audio.duration;
+
+    }
+
+
+
+    /* =========================
+       TIME FORMAT
+       ========================= */
+
+    function formatTime(seconds) {
+
+      if (isNaN(seconds)) {
+        return "0:00";
+      }
+
+      const minutes =
+        Math.floor(seconds / 60);
+
+      const remainingSeconds =
+        Math.floor(seconds % 60);
+
+      return (
+        minutes +
+        ":" +
+        remainingSeconds
+          .toString()
+          .padStart(2, "0")
+      );
+
+    }
+
 
   </script>
 
