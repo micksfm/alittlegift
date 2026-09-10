@@ -543,11 +543,13 @@
 
       font-family: "Caveat", cursive;
 
-      font-size: 22px;
+      font-size: 24px;
 
-      color: #a99f92;
+      color: #cfc3b3;
 
-      margin-top: 50px;
+      line-height: 1.5;
+
+      margin-top: 55px;
     }
 
 
@@ -732,7 +734,6 @@
           a little something from me ♡
         </h2>
 
-
         <div class="track">
 
           <div class="track-main">
@@ -740,11 +741,9 @@
             <button
               class="play-button"
               onclick="toggleTrack('audio00', this)"
-              aria-label="play before you begin"
             >
               ▶
             </button>
-
 
             <div class="track-details">
 
@@ -759,7 +758,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -778,7 +776,6 @@
             </div>
 
           </div>
-
 
           <audio
             id="audio00"
@@ -802,7 +799,6 @@
           prologue
         </h2>
 
-
         <div class="track">
 
           <div class="track-main">
@@ -810,11 +806,9 @@
             <button
               class="play-button"
               onclick="toggleTrack('audio01', this)"
-              aria-label="play prologue"
             >
               ▶
             </button>
-
 
             <div class="track-details">
 
@@ -829,7 +823,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -848,7 +841,6 @@
             </div>
 
           </div>
-
 
           <audio
             id="audio01"
@@ -873,16 +865,11 @@
         </h2>
 
 
-        <!-- TRACK 02 -->
-
         <div class="track">
 
           <div class="track-main">
 
-            <button
-              class="play-button"
-              onclick="toggleTrack('audio02', this)"
-            >
+            <button class="play-button" onclick="toggleTrack('audio02', this)">
               ▶
             </button>
 
@@ -899,7 +886,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -919,27 +905,16 @@
 
           </div>
 
-
-          <audio
-            id="audio02"
-            src="02-part one.m4a"
-            preload="metadata"
-          ></audio>
+          <audio id="audio02" src="02-part one.m4a" preload="metadata"></audio>
 
         </div>
 
-
-
-        <!-- TRACK 03 -->
 
         <div class="track">
 
           <div class="track-main">
 
-            <button
-              class="play-button"
-              onclick="toggleTrack('audio03', this)"
-            >
+            <button class="play-button" onclick="toggleTrack('audio03', this)">
               ▶
             </button>
 
@@ -956,7 +931,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -976,27 +950,16 @@
 
           </div>
 
-
-          <audio
-            id="audio03"
-            src="03-part one.m4a"
-            preload="metadata"
-          ></audio>
+          <audio id="audio03" src="03-part one.m4a" preload="metadata"></audio>
 
         </div>
 
-
-
-        <!-- TRACK 04 -->
 
         <div class="track">
 
           <div class="track-main">
 
-            <button
-              class="play-button"
-              onclick="toggleTrack('audio04', this)"
-            >
+            <button class="play-button" onclick="toggleTrack('audio04', this)">
               ▶
             </button>
 
@@ -1013,7 +976,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -1033,27 +995,16 @@
 
           </div>
 
-
-          <audio
-            id="audio04"
-            src="04-part one.m4a"
-            preload="metadata"
-          ></audio>
+          <audio id="audio04" src="04-part one.m4a" preload="metadata"></audio>
 
         </div>
 
-
-
-        <!-- TRACK 05 -->
 
         <div class="track">
 
           <div class="track-main">
 
-            <button
-              class="play-button"
-              onclick="toggleTrack('audio05', this)"
-            >
+            <button class="play-button" onclick="toggleTrack('audio05', this)">
               ▶
             </button>
 
@@ -1070,7 +1021,6 @@
             </div>
 
           </div>
-
 
           <div class="progress-area">
 
@@ -1090,21 +1040,359 @@
 
           </div>
 
-
-          <audio
-            id="audio05"
-            src="05-part one.m4a"
-            preload="metadata"
-          ></audio>
+          <audio id="audio05" src="05-part one.m4a" preload="metadata"></audio>
 
         </div>
 
+      </div>
+
+
+
+      <!-- =========================
+           PART TWO
+           ========================= -->
+
+      <div class="audio-section">
+
+        <h2 class="section-title">
+          part two
+        </h2>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio06', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                06 · part two
+              </p>
+
+              <div class="track-length">
+                15:21
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio06', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>15:21</span>
+            </div>
+
+          </div>
+
+          <audio id="audio06" src="06-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio07', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                07 · part two
+              </p>
+
+              <div class="track-length">
+                19:44
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio07', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>19:44</span>
+            </div>
+
+          </div>
+
+          <audio id="audio07" src="07-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio08', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                08 · part two
+              </p>
+
+              <div class="track-length">
+                21:38
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio08', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>21:38</span>
+            </div>
+
+          </div>
+
+          <audio id="audio08" src="08-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio09', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                09 · part two
+              </p>
+
+              <div class="track-length">
+                20:58
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio09', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>20:58</span>
+            </div>
+
+          </div>
+
+          <audio id="audio09" src="09-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio10', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                10 · part two
+              </p>
+
+              <div class="track-length">
+                21:26
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio10', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>21:26</span>
+            </div>
+
+          </div>
+
+          <audio id="audio10" src="10-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio11', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                11 · part two
+              </p>
+
+              <div class="track-length">
+                21:35
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio11', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>21:35</span>
+            </div>
+
+          </div>
+
+          <audio id="audio11" src="11-part two.m4a" preload="metadata"></audio>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           EPILOGUE
+           ========================= -->
+
+      <div class="audio-section">
+
+        <h2 class="section-title">
+          epilogue
+        </h2>
+
+        <div class="track">
+
+          <div class="track-main">
+
+            <button class="play-button" onclick="toggleTrack('audio12', this)">
+              ▶
+            </button>
+
+            <div class="track-details">
+
+              <p class="track-title">
+                12 · epilogue
+              </p>
+
+              <div class="track-length">
+                2:36
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="progress-area">
+
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              oninput="seekTrack('audio12', this.value)"
+            >
+
+            <div class="time-row">
+              <span class="current-time">0:00</span>
+              <span>2:36</span>
+            </div>
+
+          </div>
+
+          <audio id="audio12" src="12-epilogue.m4a" preload="metadata"></audio>
+
+        </div>
 
       </div>
 
 
       <p class="end-note">
-        more of the story awaits ✦
+        the end ♡
+        <br>
+        thanks for listening, baby.
       </p>
 
 
@@ -1286,6 +1574,9 @@
         localStorage.removeItem(
           "progress-" + audio.id
         );
+
+        progressBar.value = 0;
+        currentTimeDisplay.textContent = "0:00";
 
       });
 
